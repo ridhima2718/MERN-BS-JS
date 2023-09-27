@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p>JavaScript function to reverse a number</p>
+<p>Value entered</p>
+<p>32243</p>
+<p>Output</p>
+
+<p id="demo"></p>
+
+<script>
+function reverse_a_number(n)
+{
+	n = n + "";
+	return n.split("").reverse().join("");
+}
+
+let result = reverse_a_number(32243);
+document.getElementById("demo").innerHTML = result;
+</script>
+
+</body>
+</html>

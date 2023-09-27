@@ -1,0 +1,40 @@
+<html>   
+   <head></head>    
+   <style>
+    img{
+        width:350px;
+        height:200px;
+        padding-left: 300px;
+    }
+   </style>
+      <script type = "text/javascript">
+            var imgObj = null;
+            var animate ;
+            
+            function init() {
+               imgObj = document.getElementById('myImage');
+               imgObj.style.position= 'relative'; 
+               imgObj.style.left = '0px'; 
+            }
+            function moveRight() {
+               imgObj.style.left = parseInt(imgObj.style.left) + 10 + 'px';
+               animate = setTimeout(moveRight,20);
+            }
+            function stop() {
+               clearTimeout(animate);
+               imgObj.style.left = '0px'; 
+            }
+            
+            window.onload = init;
+      </script>
+   </head>
+   
+   <body>   
+      <form>
+         <img id = "myImage" src = "train.png" />
+         <p align="center" style="color:rgb(53, 48, 162);font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;font-weight: 700;font-size: x-large;">Click the buttons below to handle animation</p>
+         <div style="text-align:center;"><input type = "button" value = "Start" onclick = "moveRight();"/>
+         <input type = "button" value = "Stop" onclick = "stop();" /></div>
+      </form>      
+   </body>
+</html>

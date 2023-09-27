@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://kit.fontawesome.com/c2a61dfaf5.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div class="container mt-3 w-50" style="background-color: #e4e4e4;">
+      <table class="w-100">
+        <form id="myForm" class="needs-validation" novalidate>
+          <tr>
+            <div class="mb-3 mt-3">
+              <td><label for="fname" class="form-label"><b>Firstname</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-user"></i>
+                    </div><input type="text"
+                      class="form-control" id="fname"
+                      placeholder="Firstname" name="fname"
+                      required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please
+                      supply your
+                      firstname</div></div></div></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="mb-3">
+              <td><label for="lname" class="control-label"><b>Lastname</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-user"></i>
+                    </div><input type="text"
+                      class="form-control" id="lname"
+                      placeholder="Lastname" name="lname"
+                      required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please
+                      supply your
+                      lastname</div></div></div></td>
+            </div>
+          </tr>
+
+          <tr>
+            <div class="mb-3">
+              <td><label for="email" class="form-label"><b>Email
+                    Address</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-envelope"></i>
+                    </div><input type="text"
+                      class="form-control" id="email"
+                      placeholder="Email Address"
+                      name="email"
+                      required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please
+                      supply
+                      your email address</div></div></div></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="mb-3">
+              <td><label for="phone" class="form-label"><b>Phone
+                    #</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-phone"></i>
+                    </div><input type="text"
+                      class="form-control" id="phone"
+                      placeholder="(845)555-1212"
+                      name="phone"
+                      required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please
+                      supply
+                      your phone number</div></div></div></td>
+            </div>
+          </tr>
+
+          <tr>
+            <div class="mb-3">
+              <td><label for="add" class="form-label"><b>Address</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-house"></i>
+                    </div><input type="text"
+                      class="form-control" id="add"
+                      placeholder="Address" name="add"
+                      required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please supply
+                      your address</div></div></div></td>
+            </div>
+          </tr>
+
+          <tr>
+            <div class="mb-3">
+              <td><label for="city" class="form-label"><b>City</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-house"></i>
+                    </div><input type="text"
+                      class="form-control" id="city"
+                      placeholder="City" name="city" required>
+                    <div class="valid-feedback">Valid.</div>
+                    <div class="invalid-feedback">Please supply
+                      your city</div></div></div></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="mb-3">
+              <td><label for="state" class="form-label"><b>State</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-list-ul"></i>
+                    </div><select class="form-control"
+                      id="state">
+                      <option>Please select your state</option>
+                      <option>Maharashtra</option>
+                      <option>Madhya Pradesh</option>
+                      <option>Gujarat</option>
+                    </select></div></div></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="mb-3">
+              <td><label for="host" class="form-label"><b>Do
+                    you have hosting</b></label></td>
+              <td><div class="form-check">
+                  <input class="form-check-input"
+                    type="radio" name="host" id="hosty"
+                    value="Yes" checked>
+                  <label class="form-check-label"
+                    for="host1">
+                    Yes
+                  </label>
+                </div>
+                <div class="form-check">
+                  <input class="form-check-input"
+                    type="radio" name="host" id="hostn"
+                    value="no">
+                  <label class="form-check-label"
+                    for="hostn">
+                    No
+                  </label>
+                </div></td>
+            </div>
+          </tr>
+          <tr>
+            <div class="mb-3">
+              <td><label for="project" class="form-label"><b>Project
+                    Description</b></label></td>
+              <td><div
+                  style="border:1px solid #c7c7c7;border-radius:4px;"><div
+                    class="input-group">
+                    <div class="input-group-addon p-2">
+                      <i class="fa-solid fa-pencil"></i>
+                    </div><textarea class="form-control"
+                      id="exampleFormControlTextarea1"
+                      rows="3"></textarea></div></div></td>
+            </div>
+          </tr>
+          <tr style="text-align: center;">
+            <div class="form-check mb-3">
+              <td colspan="2"><button type="submit"
+                  class="btn btn-warning"
+                  style="border-radius:4px;color: white;">Send&nbsp;<i
+                    class="fa-solid fa-paper-plane"></i></button></td>
+            </tr>
+          </form>
+        </table>
+      </div>
+      <script>
+        document.getElementById("myForm").addEventListener("submit", function(event) {
+          event.preventDefault(); 
+          if (this.checkValidity() === false) {
+            event.stopPropagation(); 
+          }
+          this.classList.add("was-validated"); 
+        }, false);
+      </script>
+
+    </body>
+  </html>

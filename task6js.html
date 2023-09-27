@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src="https://kit.fontawesome.com/c2a61dfaf5.js"
+      crossorigin="anonymous"></script>
+  </head>
+  <style>
+  * {
+    margin: 0px;
+    padding: 0px;
+  }
+
+  body {
+    background-color: #fff;
+  }
+
+  #wrapper {
+    width: 500px;
+    height: 50%;
+    overflow: hidden;
+    border: 0px solid #000;
+    margin: 50px auto;
+    padding: 10px;
+  }
+
+  .main-content {
+    width: 260px;
+    height: 260px;
+    margin: 10px auto;
+    background-color: #edeef0;
+    border: 2px solid #e6e6e6;
+    padding: 15px 15px;
+    box-shadow: 2px 2px 2px 2px #b7b6b6;
+  }
+
+  .header {
+    border: 0px solid #000;
+    margin-bottom: 5px;
+  }
+
+  .input-1,
+  .input-2 {
+    width: 100%;
+    margin-bottom: 20px;
+    padding: 8px 29px;
+    border: 1px solid #dbdbdb;
+    box-sizing: border-box;
+    border-radius: 3px;
+  }
+
+  .overlap-text {
+    position: relative;
+  }
+
+  .btn {
+    width: 100%;
+    height: 35px;
+    background-color: #3897f0;
+    border: 1px solid #3897f0;
+    padding: 5px 12px;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .sub-content {
+    width: 250px;
+    height: 40%;
+    margin: 10px auto;
+    border: 1px solid #e6e6e6;
+    padding: 20px 50px;
+    background-color: #fff;
+  }
+
+  .l-part i {
+    position: absolute;
+  }
+
+  i {
+    padding-top: 10px;
+    padding-bottom: 9px;
+    padding-left: 3px;
+    padding-right: 3px;
+    background: #dbdbdb;
+    color: #323131;
+    width: 20px;
+    font-size: small;
+    text-align: center;
+    border-radius: 3px 0px 0px 3px;
+  }
+
+  .s-part {
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+    padding-top: 5px;
+    font-size: small;
+  }
+
+  .s-part a {
+    text-decoration: none;
+    cursor: pointer;
+    color: #3897f0;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: lighter;
+  }
+
+  .form-check {
+    font-size: smaller;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 1px;
+  }
+
+  .forgot a {
+    cursor: pointer;
+    color: #3897f0;
+    font-family: 'Trebuchet MS', sans-serif;
+    font-weight: 1px;
+    font-size: smaller;
+  }
+
+  input:focus {
+    background-color: #dbdbdb;
+    border: 1px solid #dbdbdb;
+  }
+
+  @font-face {
+    font-family: billabong;
+    src: url(FontsFree-Net-Billabong.ttf);
+    font-weight: bold;
+  }
+</style>
+
+  <body>
+    <script type="text/javascript">
+    function validateform() {
+      var username = document.f1.username.value;
+      var password = document.f1.password.value;
+      if (username == null || username == "") {
+        alert("Username can't be blank");
+        return false;
+      } else if (password.length < 6) {
+        alert("Password must be at least 6 characters long.");
+        return false;
+      }
+    }
+  </script>
+
+    <div id="wrapper">
+      <div class="main-content">
+        <div class="header"
+          style="font-family: billabong;font-size:300%;text-align: center;">Instagram</div>
+        <div class="l-part">
+          <form name="f1" action="/action_page.php"
+            onsubmit="return validateform()">
+            <i class='fas fa-user-alt'></i>
+            <input type="text" name="username" placeholder="Username"
+              class="input-1" />
+            <i class="fa fa-lock"></i>
+            <input type="password" name="password" placeholder="Password"
+              class="input-2" />
+
+            <input type="submit" value="Log in" class="btn" />
+            <div class="form-check"
+              style="padding-top:20px;display: inline-block;padding-right:20px;">
+              <input type="checkbox" class="form-check-input" id="exampleCheck1">
+              <label class="form-check-label" for="exampleCheck1">Remember Me</label>
+            </div>
+            <div class="forgot" style="display: inline-block;padding-left:30px;"><a
+                href="#" style="text-decoration:none;">Forgot Password?</a></div>
+          </form>
+        </div>
+      </div>
+      <div class="s-part">Don't have an account?<a href="#">&nbsp;Sign up here.</a>
+      </div>
+
+    </div>
+  </body>
+
+</html>

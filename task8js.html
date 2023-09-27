@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <style>
+    #grad1 {
+  height: 600px;
+  background-image: linear-gradient(#fff,#f7f798, #e6c16f,#eb99f1,#d46ee3);
+}
+div{
+    width:780px;
+    margin:auto;
+}
+    table,
+    th,
+    td {
+      border: 1px;
+      border-collapse: collapse;
+    }
+
+    td {
+      padding-left: 10px;
+    }
+
+    span{
+        font-size:small;
+    }
+  </style>
+    </head>
+    <div id="grad1">
+
+        <body>
+            <h1 style="padding-left:220px;padding-top:40px;color:blue;">Registration
+                Form</h1>
+            <script type="text/javascript">
+        function validate() {
+          var fname = document.f1.fname.value;
+          var lname = document.f1.lname.value;
+          var pwd = document.f1.pwd.value.length;
+          var password = document.f1.pwd.value;
+          var rpwd = document.f1.rpwd.value;
+          var  address = document.f1.address.value.length;
+          var  state = document.f1.state.value.length;
+      var phonePattern = /^\d{10}$/;
+      var phone = document.f1.phone.value;
+          var age = document.f1.age.value.length;
+          var x = document.f1.email.value;
+          var atposition = x.indexOf("@");
+          var dotposition = x.lastIndexOf(".");
+          var status = false;
+          //validate fname
+          if (fname == "") {
+            document.getElementById("fnamelocation").innerHTML =
+              "&nbspPOOR";
+            status = false;
+          } else {
+        document.getElementById("fnamelocation");
+        status = true;
+          }
+          //validate lname
+          if (lname == "") {
+            document.getElementById("lnamelocation").innerHTML =
+              "&nbspPOOR";
+            status = false;
+          } 
+          else {
+        document.getElementById("lnamelocation");
+        status = true;
+          }
+             
+          //validate email
+          if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+            document.getElementById("emaillocation").innerHTML = "&nbspPOOR";
+            status = false;
+          }
+          else {
+        document.getElementById("emaillocation");
+        status = true;
+          }
+          //validate password
+          if (pwd < 6) {
+            document.getElementById("pwdlocation").innerHTML = "&nbspPOOR";
+        status=false;
+          }
+          else {
+        document.getElementById("pwdlocation");
+        status = true;
+          }
+          //reconfirm password 
+          if ((rpwd != password)||(rpwd == "")) {
+            document.getElementById("rpwdlocation").innerHTML = "&nbspPOOR OR MISMATCH";
+        status=false;
+          }
+          else {
+        document.getElementById("rpwdlocation");
+        status = true;
+          }
+          //validate phone number
+      if (phone.match(phonePattern)) {
+        document.getElementById("phonelocation");
+      status=true;
+        }
+      else{
+        document.getElementById("phonelocation").innerHTML = "&nbspPOOR";
+        status = false;
+        }
+
+        //validate age
+        if (age == "") {
+            document.getElementById("agelocation").innerHTML =
+              "&nbspPOOR";
+            status = false;
+          } else {
+        document.getElementById("agelocation");
+        status = true;
+          }
+          //validate message
+          if (address == "") {
+            document.getElementById("addresslocation").innerHTML =
+              "&nbspPOOR";
+            status = false;
+          } else {
+            document.getElementById("addresslocation");
+          }
+
+          //validate state
+          if (state == "") {
+            document.getElementById("statelocation").innerHTML =
+              "&nbspPOOR";
+            status = false;
+          } else {
+            document.getElementById("statelocation");
+          }
+        
+          return status;
+        }
+
+      </script>
+
+            <form name="f1" action="/action_page.php"
+                onsubmit="return validate()">
+                <table style="margin-left: 10px;">
+                    <tr>
+                        <th><label for="fname">First name</label></th>
+                        <td><input type="text" name="fname" size="65" /><span
+                                id="fnamelocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="lname">Last name</label></th>
+                        <td><input type="text" name="lname" size="65" /><span
+                                id="lnamelocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="email">Email</label></th>
+                        <td><input type="text" name="email" size="65" /><span
+                                id="emaillocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="pwd">Password</label></th>
+                        <td><input type="password" name="pwd" size="65" /><span
+                                id="pwdlocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="rpwd">Re-enter Password</label></th>
+                        <td><input type="password" name="rpwd" size="65" /><span
+                                id="rpwdlocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th rowspan="2">Gender</th>
+                        <td><input type="radio" id="male" name="gender"
+                                value="male">
+                            <label for="male">Male</label></td>
+                    </tr>
+                    <tr>
+                        <td><input type="radio" id="female" name="gender"
+                                value="female">
+                            <label for="female">Female</label></td>
+                    </tr>
+                    <tr>
+                        <th><label for="age">Age</label></th>
+                        <td><input type="number" id="age" name="age" size="65" /><span
+                                id="agelocation" style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="phone">Phone Number</label></th>
+                        <td><input type="tel" id="phone" name="phone" size="65"
+                                maxlength="10" /><span id="phonelocation"
+                                style="color:red;"></span></td>
+                    </tr>
+                    <tr>
+                        <th><label for="address">Address</label></th>
+                        <td><textarea name="address" rows="5" cols="61"></textarea><span
+                                id="addresslocation" style="color:red;"></span></td>
+                    </tr>
+                    <th><label for="state">State</label></th>
+                    <td><input type="text" id="state" name="state" size="65" /><span
+                            id="statelocation" style="color:red;"></span></td>
+                </tr>
+                <tr>
+                    <th><label for="country">Country</label></th>
+                    <td><input list="country" name="country"
+                            placeholder="Choose your country">
+                        <datalist id="country">
+                            <option value="India">
+                                <option value="USA">
+                                    <option value="Russia">
+                                        <option value="United Kingdom">
+                                            <option value="Japan">
+                                            </datalist>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label for="lang">Languages Known</label></th>
+                                        <td><input type="checkbox" id="lang1"
+                                                name="lang1" value="English">
+                                            <label for="lang1">English</label>
+                                            <input type="checkbox" id="lang2"
+                                                name="lang2" value="Kannada">
+                                            <label for="lang2">Kannada</label>
+                                            <input type="checkbox" id="lang3"
+                                                name="lang3" value="Hindi">
+                                            <label for="lang3">Hindi</label>
+                                            <input type="checkbox" id="lang4"
+                                                name="lang4" value="Telugu">
+                                            <label for="lang4">Telugu</label>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2"><input type="checkbox"
+                                                id="check" name="check" required><label
+                                                for="check">Hereby I declare all
+                                                the given details are true.</label></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="text-align:right"><label>Log
+                                                in to <a
+                                                    href="https://ethnus.com/">Ethnus</a>
+                                                website</label></td>
+                                    </tr>
+                                </table>
+                                <br>
+                                <input type="submit" value="Register"
+                                    style="margin-left:300px;border-radius:10px;background:red;border-width:2px;color:white;">
+                            </form>
+
+                        </body>
+                    </div>
+
+                </html>

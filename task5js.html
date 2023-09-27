@@ -1,0 +1,80 @@
+<html>
+
+<body>
+  <script type="text/javascript">
+    function validate() {
+      var name = document.f1.name.value;
+      var message = document.f1.message.value.length;
+      var x = document.f1.email.value;
+      var atposition = x.indexOf("@");
+      var dotposition = x.lastIndexOf(".");
+      var status = false;
+      //validate name
+      if (name == "") {
+        document.getElementById("namelocation").innerHTML =
+          "&nbspThis field is required";
+        status = false;
+      } else {
+        document.getElementById("namelocation").innerHTML = "&nbspSaved";
+        status = true;
+      }
+      //validate email
+      if (atposition < 1 || dotposition < atposition + 2 || dotposition + 2 >= x.length) {
+        document.getElementById("emaillocation").innerHTML = "&nbspA valid email message if required.";
+        status = false;
+      }
+      //validate url
+      var urlInput = document.getElementById("url");
+      var resultElement = document.getElementById("result");
+      var urlPattern = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,6}([\/\?#].*)?$/;
+      var url = urlInput.value;
+      if (urlPattern.test(url)) {
+        document.getElementById("urllocation").innerHTML =
+          "&nbspSaved";
+        status = true;
+      } else {
+        document.getElementById("urllocation").innerHTML =
+          "&nbspA valid URL is required";
+        status = false;
+      }
+      //validate message
+      if (message == "") {
+        document.getElementById("messagelocation").innerHTML =
+          "&nbspThis field is required";
+        status = false;
+      } else {
+        document.getElementById("messagelocation").innerHTML = "&nbspSaved";
+      }
+      return status;
+    }
+  </script>
+  <form name="f1" action="/action_page.php" onsubmit="return validate()">
+    <table>
+      <tr>
+        <td>Name:</td>
+        <td><input type="text" name="name" />
+          <span id="namelocation" style="color:red;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td>Email:</td>
+        <td><input type="text" name="email" /><span id="emaillocation" style="color:red;"></span></td>
+      </tr>
+      <tr>
+        <td>URL:</td>
+        <td><input type="text" id="url" /><span id="urllocation" style="color:red;"></span></td>
+      </tr>
+      <tr>
+        <td>Message:</td>
+        <td><textarea name="message" rows="5" cols="20"></textarea>
+          <span id="messagelocation" style="color:red;"></span>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2"><input type="submit" value="Submit" /> </td>
+      </tr>
+    </table>
+  </form>
+</body>
+
+</html>
